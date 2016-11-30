@@ -1,0 +1,19 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-group">
+            <label for="nombre">Nombre de usuario</label>
+            <input type="text" name="nombre" id="nombre" placeholder="dígite nombre" class="form-control" [(ngModel)]="usuario.nombreusuario"
+                required #nombreusuario="ngModel" autocomplete="false">
+            <span *ngIf="!nombreusuario.valid && !nombreusuario.pristine">La contraseña es requerida</span>
+        </div>
+
+        <div class="form-group">
+            <label for="psw">Contraseña</label>
+            <input type="password" name="psw" id="psw" placeholder="contraseña" class="form-control" [(ngModel)]="usuario.pswd" required
+                #psw="ngModel">
+            <span *ngIf="!psw.valid && !psw.pristine">La contraseña es requerida</span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+</div>
